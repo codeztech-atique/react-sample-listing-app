@@ -34,7 +34,7 @@ export class AddItem extends React.Component {
       <div>
         <form id="add-todo" onSubmit={this.addItem}>
           <input type="text" ref={(a) => this._inputElement = a} 
-          placeholder="Enter your task here..."  />
+            placeholder="Enter your task here..."  />
           <input type="submit" value="Hit me" />
         </form>
         <TodoItem entries={this.state.items} />

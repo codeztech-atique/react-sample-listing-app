@@ -11,20 +11,54 @@ import '../css/todoItem.css';
 //                 </li>
 //              </ul>
 //           })}
+// <div>
+//   {todoEntries.map((data, cnt) => {
+//       console.log(data);
+//   })}
+// </div>
+// {this.state.todoEntries.map((item,cnt) => {
+//             console.log(item);
+//             <div>
+//               <li key={cnt}>
+//                 {item.text}
+//               </li>
+//             </div>
+//          })} 
 export class TodoItem extends React.Component {
-    createTasks(item) {
-      return  <div class="todo-item"><li className="item-name" key={item.key}>{item.text} </li></div>   
+    constructor(props) {
+      super(props);
+      this.state = {
+        todoEntries: [],
+      }
     }
-    onDelete(item) {
-      console.log(item);
+    
+
+    onDelete(data) {
+      var abc = this.state.todoEntries.filter((val, index) => {
+        return data!==val;
+      })
+
+      this.props.entries.map((val, index) => {
+        if(data===val.text) {
+          delete this.props.entries[index];
+        }
+      })
+      this.setState({todoEntries:this.props.entries});
     }
+    
     render() {
-      var todoEntries = this.props.entries;
-      var listItems = todoEntries.map(this.createTasks);
+      this.state.todoEntries = [];
+      this.props.entries.map((data, cnt)=> {
+         this.state.todoEntries.push(data.text);
+      })
       return(
-          <div>
-            {listItems}
-          </div>
+        <div>
+          {this.state.todoEntries.map((data, cnt) => (
+            <ul key={cnt}> 
+              <li>{data}<span style={{color: "red", cursor: "pointer"}} onClick={() => this.onDelete(data)}> X</span></li>
+            </ul>
+          ))}
+        </div>
       );
     }
 }
