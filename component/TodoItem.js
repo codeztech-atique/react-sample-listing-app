@@ -1,29 +1,6 @@
 import React, { Component } from 'react';
 import '../css/todoItem.css';
 
-
-//  <span className="item-remove" style={{color: "red", cursor: "pointer"}} onClick={() => this.onDelete(data)}> X</span>
-// {todoEntries.map((item, cnt) => {
-//             console.log(item, item.text);
-//              <ul key={cnt}>
-//                 <li>{item.text}
-                  
-//                 </li>
-//              </ul>
-//           })}
-// <div>
-//   {todoEntries.map((data, cnt) => {
-//       console.log(data);
-//   })}
-// </div>
-// {this.state.todoEntries.map((item,cnt) => {
-//             console.log(item);
-//             <div>
-//               <li key={cnt}>
-//                 {item.text}
-//               </li>
-//             </div>
-//          })} 
 export class TodoItem extends React.Component {
     constructor(props) {
       super(props);
