@@ -8,8 +8,6 @@ export class TodoItem extends React.Component {
         todoEntries: [],
       }
     }
-    
-
     onDelete(data) {
       var abc = this.state.todoEntries.filter((val, index) => {
         return data!==val;
@@ -22,7 +20,6 @@ export class TodoItem extends React.Component {
       })
       this.setState({todoEntries:this.props.entries});
     }
-    
     render() {
       this.state.todoEntries = [];
       this.props.entries.map((data, cnt)=> {
