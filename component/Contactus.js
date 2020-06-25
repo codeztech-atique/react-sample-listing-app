@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import AddItem from './AddItem';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+
 
 export class Contactus extends React.Component {
    render() {
